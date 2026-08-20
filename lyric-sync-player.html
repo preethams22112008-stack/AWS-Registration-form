@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Registration Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      color-scheme: dark;
+      --bg-gradient: radial-gradient(circle at 12% 20%, rgba(87, 185, 255, .68), transparent 31rem),
+                      radial-gradient(circle at 88% 78%, rgba(167, 128, 255, .62), transparent 30rem),
+                      linear-gradient(135deg, #071329 0%, #152d5d 48%, #20184b 100%);
+      --card-bg: linear-gradient(135deg, rgba(255, 255, 255, .14), rgba(255, 255, 255, .04));
+      --text: #f6f8ff;
+      --muted: #b9c4dd;
+      --input-bg: rgba(4, 16, 43, .35);
+      --border: rgba(255, 255, 255, .18);
+      --accent: linear-gradient(135deg, #48b4f4, #8172eb);
+    }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 32px 18px;
+      background: var(--bg-gradient);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    .form-card {
+      width: min(100%, 520px);
+      padding: clamp(28px, 5vw, 44px);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 24px 60px rgba(2, 8, 28, .4);
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      letter-spacing: -.03em;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: .92rem;
+      margin-bottom: 24px;
+    }
+
+    form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    @media (max-width: 480px) {
+      .row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    input {
+      width: 100%;
+      padding: 13px 15px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--input-bg);
+      color: var(--text);
+      font: inherit;
+      font-size: .9rem;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    input::placeholder {
+      color: #94a3b8;
+    }
+
+    input:focus {
+      border-color: #80d7ff;
+      box-shadow: 0 0 0 3px rgba(87, 185, 255, .2);
+    }
+
+    button {
+      margin-top: 8px;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background: var(--accent);
+      color: white;
+      font: inherit;
+      font-weight: 700;
+      font-size: .95rem;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(72, 180, 244, .3);
+      transition: transform .18s, box-shadow .18s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(72, 180, 244, .4);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <main class="form-card">
+    <h1> AWS Registration</h1>
+    <p class="subtitle">Please fill out your information below to get started.</p>
+
+    <form action="https://formsubmit.co/preethams22112008@gmail.com" method="POST">
+      <div class="row">
+        <input type="text" name="name" placeholder="Your Name" autocomplete="name" required>
+        <input type="text" name="reg_number" placeholder="Registration Number" required>
+      </div>
+
+      <div class="row">
+        <input type="email" name="email" placeholder="Email Address" autocomplete="email" required>
+        <input type="tel" name="phone" placeholder="Phone Number" autocomplete="tel">
+      </div>
+
+      <button type="submit">Submit Registration</button>
+    </form>
+  </main>
+</body>
+</html>
